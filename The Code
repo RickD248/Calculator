@@ -1,0 +1,108 @@
+import java.util.Scanner;
+public class Calculadora {
+	
+	public static void main(String[] args) {
+		
+		//vars para repeticao ou vars importads;
+		
+		int[] repeticao = new int[4];
+		repeticao[0] = 0;
+		repeticao[1] = 0;
+		repeticao[2] = 0;
+		repeticao[3] = 0;
+		Scanner in = new Scanner(System.in);
+		
+		//vars gerais;
+		
+		int escolha1 = 0;
+		double numero[] = new double[2];
+		double resultado;
+		int quantidade;		
+		//repeticao começo;
+		
+		while (repeticao[0] == 0) {
+			
+			//começo codigo;
+			
+			quantidade = 0;
+					
+			System.out.println("Digite o numero que deseja inserir na conta");
+			System.out.println("Caso for usar numeros com virgulas, use o ponto, e não a virgula");
+			numero[quantidade] = in.nextInt();
+			System.out.println(" ");
+			quantidade ++;
+			
+			System.out.println("Digite:");
+			System.out.println("1) Para soma");
+			System.out.println("2) Para subtraçao");
+			System.out.println("3) Para multiplicaçao");
+			System.out.println("4) Para divisao");
+			escolha1 = in.nextInt();
+			System.out.println(" ");
+			
+			System.out.println("Digite o numero que deseja inserir na conta");
+			System.out.println("Caso for usar numeros com virgulas, use o ponto, e não a virgula");
+			numero[quantidade] = in.nextInt();
+			System.out.println(" ");
+			quantidade ++;
+			
+			//resultado;
+			
+			if (escolha1 == 1) {
+				
+				resultado = numero[0] + numero[1];
+				System.out.println(numero[0] + " + " + numero[1] + " = " + resultado);
+				
+			}
+			
+			if (escolha1 == 2) {
+				
+				resultado = numero[0] - numero[1];
+				System.out.println(numero[0] + " - " + numero[1] + " = " + resultado);
+				
+			}
+			
+			if (escolha1 == 3) {
+				
+				resultado = numero[0] * numero[1];
+				System.out.println(numero[0] + " * " + numero[1] + " = " + resultado);
+				
+			}
+			
+			if (escolha1 == 4) {
+				
+				resultado = numero[0] / numero[1];
+				System.out.println(numero[0] + " / " + numero[1] + " = " + resultado);
+				
+			}
+			
+			if ((escolha1 != 1) && (escolha1 != 2) && (escolha1 != 3) && (escolha1 != 4)) {
+				
+				System.out.println("esta operacao nao existe");
+				
+			}
+			
+			//fim repeticao;
+			
+			System.out.println(" ");
+			System.out.println("Digite 0 se deseja parar de usar a calculadora");
+			repeticao[1] = in.nextInt();
+			System.out.println("");
+			
+			if (repeticao[1] == 0) {
+				
+				repeticao[0] ++;
+				
+			}
+			
+			//fim while principal;
+			
+		}
+		
+		//fim codigo real;
+		
+		in.close();
+		
+	}
+	
+}
